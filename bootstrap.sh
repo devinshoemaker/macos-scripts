@@ -25,13 +25,22 @@ else
     echo '==> Skipping Homebrew.'
 fi
 
-echo '==> Install Homebrew Cask? (Y/n)'
+echo '==> Install Homebrew Caskroom? (Y/n)'
 read INSTALL_HOMEBREW_CASK
 if [ "$INSTALL_HOMEBREW_CASK" = 'y' ] || [ "$INSTALL_HOMEBREW_CASK" = 'yes' ] || [ "$INSTALL_HOMEBREW_CASK" = '' ]; then
     # Homebrew Cask
     brew tap caskroom/cask
+    brew tap caskroom/versions
 else
     echo '==> Skipping Homebrew Cask.'
+fi
+
+echo '==> Install Java 8? (Y/n)'
+read INSTALL_JAVA
+if [ "$INSTALL_JAVA" = 'y' ] || [ "$INSTALL_JAVA" = 'yes' ] || [ "$INSTALL_JAVA" = '' ]; then
+    brew cask install java8
+else
+    echo '==> Skipping Java 8.'
 fi
 
 echo '==> Install Cask applications? (Y/n)'
