@@ -45,6 +45,7 @@ fi
 echo '==> Install development packages? (Y/n)'
 read INSTALL_DEVELOPMENT_PACKAGES
 if [ "$INSTALL_DEVELOPMENT_PACKAGES" = 'y' ] || [ "$INSTALL_DEVELOPMENT_PACKAGES" = 'yes' ] || [ "$INSTALL_DEVELOPMENT_PACKAGES" = '' ]; then
+    brew install git
     brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
 else
     echo '==> Skipping development packages.'
