@@ -66,3 +66,11 @@ if [ "$INSTALL_DEVELOPMENT_PACKAGES" = 'y' ] || [ "$INSTALL_DEVELOPMENT_PACKAGES
 else
     echo '==> Skipping development packages.'
 fi
+
+echo '==> Install Node.js? (Y/n)'
+read INSTALL_NODE
+if [ "$INSTALL_NODE" = 'y' ] || [ "$INSTALL_NODE" = 'yes' ] || [ "$INSTALL_NODE" = '' ]; then
+    ./nodejs.sh
+else
+    echo '==> Skipping Node.js.'
+fi
