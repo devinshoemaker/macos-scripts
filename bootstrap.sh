@@ -16,13 +16,21 @@ else
     echo '==> Skipping macOS updates.'
 fi
 
-echo '==> Install Homebrew? (Y/n)'
-read INSTALL_HOMEBREW
-if [ "$INSTALL_HOMEBREW" = 'y' ] || [ "$INSTALL_HOMEBREW" = 'yes' ] || [ "$INSTALL_HOMEBREW" = '' ]; then
+echo '==> Checking if Homebrew is installed...'
+which -s brew
+if [[ $? != 0 ]] ; then
     # Install Homebrew
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo '==> Homebrew not found, install Homebrew? (Y/n)'
+    read INSTALL_HOMEBREW
+    if [ "$INSTALL_HOMEBREW" = 'y' ] || [ "$INSTALL_HOMEBREW" = 'yes' ] || [ "$INSTALL_HOMEBREW" = '' ]; then
+        # Install Homebrew
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+        echo '==> Skipping Homebrew.'
+    fi
 else
-    echo '==> Skipping Homebrew.'
+    echo '==> Homebrew found, updating packages.'
+    brew update
 fi
 
 echo '==> Install Homebrew Caskroom? (Y/n)'
