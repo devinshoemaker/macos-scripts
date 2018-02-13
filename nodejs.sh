@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# macOS - Install Node.js
+
 echo '==> Checking if Homebrew is installed...'
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -11,7 +13,7 @@ else
     brew update
 fi
 
-# Install NVM
+# Install Node Version Manager
 brew install nvm
 
 # Allow NVM without restarting
