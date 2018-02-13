@@ -54,7 +54,7 @@ fi
 echo '==> Install Cask applications? (Y/n)'
 read INSTALL_CASK_APPLICATIONS
 if [ "$INSTALL_CASK_APPLICATIONS" = 'y' ] || [ "$INSTALL_CASK_APPLICATIONS" = 'yes' ] || [ "$INSTALL_CASK_APPLICATIONS" = '' ]; then
-    brew cask install android-file-transfer firefox google-chrome marshallofsound-google-play-music-player moom slack spectacle transmission vlc
+    brew cask install android-file-transfer eqmac firefox google-chrome marshallofsound-google-play-music-player moom slack spectacle transmission vlc
 else
     echo '==> Skipping Cask applications.'
 fi
