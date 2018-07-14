@@ -7,8 +7,8 @@ sudo -v
 
 # macOS Updates
 echo '==> Install macOS updates? (Y/n)'
-read INSTALL_MACOS_UPDATES
-if [ "$INSTALL_MACOS_UPDATES" == 'y' ] || [ "$INSTALL_MACOS_UPDATES" == '' ]; then
+read USER_PROMPT
+if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
     echo "==> Updating macOS"
     softwareupdate -l
     softwareupdate -i -a
@@ -21,8 +21,8 @@ which -s brew
 if [[ $? != 0 ]] ; then
     # Install Homebrew
     echo '==> Homebrew not found, install Homebrew? (Y/n)'
-    read INSTALL_HOMEBREW
-    if [ "$INSTALL_HOMEBREW" = 'y' ] || [ "$INSTALL_HOMEBREW" = '' ]; then
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
         # Install Homebrew
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
@@ -34,8 +34,8 @@ else
 fi
 
 echo '==> Install Homebrew Caskroom? (Y/n)'
-read INSTALL_HOMEBREW_CASK
-if [ "$INSTALL_HOMEBREW_CASK" = 'y' ] || [ "$INSTALL_HOMEBREW_CASK" = '' ]; then
+read USER_PROMPT
+if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
     # Homebrew Cask
     brew tap caskroom/cask
     brew tap caskroom/versions
@@ -44,32 +44,32 @@ else
 fi
 
 echo '==> Install Java 8? (Y/n)'
-read INSTALL_JAVA
-if [ "$INSTALL_JAVA" = 'y' ] || [ "$INSTALL_JAVA" = 'yes' ] || [ "$INSTALL_JAVA" = '' ]; then
+read USER_PROMPT
+if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = 'yes' ] || [ "$USER_PROMPT" = '' ]; then
     brew cask install java8
 else
     echo '==> Skipping Java 8.'
 fi
 
 echo '==> Install Cask applications? (Y/n)'
-read INSTALL_CASK_APPLICATIONS
-if [ "$INSTALL_CASK_APPLICATIONS" = 'y' ] || [ "$INSTALL_CASK_APPLICATIONS" = '' ]; then
+read USER_PROMPT
+if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
     brew cask install android-file-transfer eqmac firefox google-chrome marshallofsound-google-play-music-player moom slack spectacle transmission vlc
 else
     echo '==> Skipping Cask applications.'
 fi
 
 echo '==> Install development packages? (Y/n)'
-read INSTALL_DEVELOPMENT_PACKAGES
-if [ "$INSTALL_DEVELOPMENT_PACKAGES" = 'y' ] || [ "$INSTALL_DEVELOPMENT_PACKAGES" = '' ]; then
+read USER_PROMPT
+if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
     brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
 else
     echo '==> Skipping development packages.'
 fi
 
 echo '==> Install Node.js? (Y/n)'
-read INSTALL_NODE
-if [ "$INSTALL_NODE" = 'y' ] || [ "$INSTALL_NODE" = '' ]; then
+read USER_PROMPT
+if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
     ./nodejs.sh
 else
     echo '==> Skipping Node.js.'
