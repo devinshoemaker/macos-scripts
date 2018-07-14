@@ -16,5 +16,5 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     echo '. "/usr/local/opt/nvm/nvm.sh"' >> ~/.bash_profile
 
     # Install latest Node.js with NVM
-    nvm install node
+    nvm install --lts
 fi
