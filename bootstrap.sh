@@ -17,8 +17,7 @@ else
 fi
 
 echo '==> Checking if Homebrew is installed...'
-which -s brew
-if [[ $? != 0 ]] ; then
+if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
     # Install Homebrew
     echo '==> Homebrew not found, install Homebrew? (Y/n)'
     read USER_PROMPT
