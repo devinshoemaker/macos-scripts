@@ -29,38 +29,40 @@ if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
     fi
 fi
 
-echo '==> Install Homebrew Caskroom? (Y/n)'
-read USER_PROMPT
-if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-    # Homebrew Cask
-    brew tap caskroom/cask
-    brew tap caskroom/versions
-else
-    echo '==> Skipping Homebrew Cask.'
-fi
+if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
+    echo '==> Install Homebrew Caskroom? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        # Homebrew Cask
+        brew tap caskroom/cask
+        brew tap caskroom/versions
+    else
+        echo '==> Skipping Homebrew Cask.'
+    fi
 
-echo '==> Install Java 8? (Y/n)'
-read USER_PROMPT
-if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = 'yes' ] || [ "$USER_PROMPT" = '' ]; then
-    brew cask install java8
-else
-    echo '==> Skipping Java 8.'
-fi
+    echo '==> Install Java 8? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = 'yes' ] || [ "$USER_PROMPT" = '' ]; then
+        brew cask install java8
+    else
+        echo '==> Skipping Java 8.'
+    fi
 
-echo '==> Install Cask applications? (Y/n)'
-read USER_PROMPT
-if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-    brew cask install android-file-transfer eqmac firefox google-chrome marshallofsound-google-play-music-player moom slack spectacle transmission vlc
-else
-    echo '==> Skipping Cask applications.'
-fi
+    echo '==> Install Cask applications? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        brew cask install android-file-transfer eqmac firefox google-chrome marshallofsound-google-play-music-player moom slack spectacle transmission vlc
+    else
+        echo '==> Skipping Cask applications.'
+    fi
 
-echo '==> Install development packages? (Y/n)'
-read USER_PROMPT
-if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-    brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
-else
-    echo '==> Skipping development packages.'
+    echo '==> Install development packages? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
+    else
+        echo '==> Skipping development packages.'
+    fi
 fi
 
 echo '==> Install Node.js? (Y/n)'
