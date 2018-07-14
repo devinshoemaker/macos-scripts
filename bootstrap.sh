@@ -27,9 +27,6 @@ if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
     else
         echo '==> Skipping Homebrew.'
     fi
-else
-    echo '==> Homebrew found, updating packages.'
-    brew update
 fi
 
 echo '==> Install Homebrew Caskroom? (Y/n)'
