@@ -2,13 +2,12 @@
 
 # Install Homebrew on macOS
 
-echo '==> Checking if Homebrew is installed...'
-which -s brew
-if [[ $? != 0 ]] ; then
-    # Install Homebrew
-    echo '==> Homebrew not found, installing now.'
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-    echo '==> Homebrew found, updating packages.'
-    brew update
+if ! command -v brew >/dev/null 2>&1 ; then
+    echo '==> Homebrew not found, install Homebrew? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+        echo '==> Skipping Homebrew.'
+    fi
 fi

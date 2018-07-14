@@ -5,7 +5,6 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# macOS Updates
 echo '==> Install macOS updates? (Y/n)'
 read USER_PROMPT
 if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
@@ -17,19 +16,9 @@ else
 fi
 
 echo '==> Checking if Homebrew is installed...'
-if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
-    # Install Homebrew
-    echo '==> Homebrew not found, install Homebrew? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        # Install Homebrew
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    else
-        echo '==> Skipping Homebrew.'
-    fi
-fi
+. brew.sh
 
-if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
+if command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Install Homebrew Caskroom? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
@@ -51,7 +40,7 @@ if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
     echo '==> Install Cask applications? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        brew cask install android-file-transfer eqmac firefox google-chrome marshallofsound-google-play-music-player moom slack spectacle transmission vlc
+        brew cask install android-file-transfer eqmac firefox google-chrome slack transmission vlc
     else
         echo '==> Skipping Cask applications.'
     fi
@@ -59,7 +48,7 @@ if ! [ command -v 'brew' >/dev/null 2>&1 ] ; then
     echo '==> Install development packages? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
+        brew cask install docker gitkraken intellij-idea iterm2 postman telegram-desktop visual-studio-code
     else
         echo '==> Skipping development packages.'
     fi
