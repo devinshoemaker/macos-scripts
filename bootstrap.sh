@@ -2,9 +2,6 @@
 
 # macOS High Sierra Bootstrap
 
-# Get Super User Privilege
-sudo -v
-
 # macOS Updates
 echo '==> Install macOS updates? (Y/n)'
 read USER_PROMPT
