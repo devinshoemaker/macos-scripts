@@ -2,6 +2,9 @@
 
 # macOS High Sierra Bootstrap
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
 # macOS Updates
 echo '==> Install macOS updates? (Y/n)'
 read USER_PROMPT
