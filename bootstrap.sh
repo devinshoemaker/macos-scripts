@@ -8,11 +8,27 @@ set -e
 echo '==> Install macOS updates? (Y/n)'
 read USER_PROMPT
 if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
-    echo "==> Updating macOS"
+    echo "==> Updating macOS..."
     softwareupdate -l
     softwareupdate -i -a
 else
     echo '==> Skipping macOS updates.'
+fi
+
+echo '==> Install macOS tweaks? (Y/n)'
+read USER_PROMPT
+if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
+    echo "==> Installing macOS tweaks"
+    # Enable dark theme
+    defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
+    # Always show scrollbars
+    defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+    # Disable natural scrolling
+    defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+else
+    echo '==> Skipping macOS tweaks.'
 fi
 
 echo '==> Checking if Homebrew is installed...'
