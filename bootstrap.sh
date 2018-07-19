@@ -56,7 +56,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Install Cask applications? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        brew cask install android-file-transfer eqmac firefox google-chrome slack transmission vlc
+        brew cask install android-file-transfer eqmac firefox google-chrome slack telegram-desktop transmission vlc
     else
         echo '==> Skipping Cask applications.'
     fi
@@ -64,7 +64,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Install development packages? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        brew cask install docker gitkraken intellij-idea iterm2 postman telegram-desktop visual-studio-code
+        brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
     else
         echo '==> Skipping development packages.'
     fi
