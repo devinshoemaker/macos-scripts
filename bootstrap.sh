@@ -50,15 +50,6 @@ if command -v 'brew' >/dev/null 2>&1 ; then
         echo '==> Skipping Homebrew Cask.'
     fi
 
-    echo '==> Install Java 8? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = 'yes' ] || [ "$USER_PROMPT" = '' ]; then
-        echo '==> Installing Java 8...'
-        brew cask install java8
-    else
-        echo '==> Skipping Java 8.'
-    fi
-
     echo '==> Install user applications? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
@@ -75,6 +66,15 @@ if command -v 'brew' >/dev/null 2>&1 ; then
         brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
     else
         echo '==> Skipping development packages.'
+    fi
+
+    echo '==> Install Java 8? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = 'yes' ] || [ "$USER_PROMPT" = '' ]; then
+        echo '==> Installing Java 8...'
+        brew cask install java8
+    else
+        echo '==> Skipping Java 8.'
     fi
 fi
 
