@@ -18,7 +18,8 @@ fi
 echo '==> Install macOS tweaks? (Y/n)'
 read USER_PROMPT
 if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
-    echo "==> Installing macOS tweaks"
+    echo '==> Installing macOS tweaks...'
+
     # Enable dark theme
     defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
@@ -41,7 +42,8 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Install Homebrew Caskroom? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        # Homebrew Cask
+        echo '==> Tapping Homebrew Caskroom...'
+
         brew tap caskroom/cask
         brew tap caskroom/versions
     else
@@ -51,22 +53,25 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Install Java 8? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = 'yes' ] || [ "$USER_PROMPT" = '' ]; then
+        echo '==> Installing Java 8...'
         brew cask install java8
     else
         echo '==> Skipping Java 8.'
     fi
 
-    echo '==> Install Cask applications? (Y/n)'
+    echo '==> Install user applications? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        echo '==> Installing user applications...'
         brew cask install android-file-transfer eqmac firefox google-chrome slack telegram-desktop transmission vlc
     else
-        echo '==> Skipping Cask applications.'
+        echo '==> Skipping user applications.'
     fi
 
-    echo '==> Install development packages? (Y/n)'
+    echo '==> Install development utilities? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        echo '==> Installing development utilities...'
         brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
     else
         echo '==> Skipping development packages.'
