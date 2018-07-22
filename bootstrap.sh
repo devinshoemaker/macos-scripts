@@ -27,6 +27,9 @@ if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
 
     # Disable natural scrolling
     defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+    # Automatically hide and show the Dock
+    defaults write com.apple.dock autohide -bool true
 else
     echo '==> Skipping macOS tweaks.'
 fi
