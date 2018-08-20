@@ -63,7 +63,19 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
         echo '==> Installing development utilities...'
-        brew cask install android-platform-tools android-studio docker git gitkraken intellij-idea iterm2 postman visual-studio-code
+        brew cask install docker git gitkraken intellij-idea iterm2 postman visual-studio-code
+    else
+        echo '==> Skipping development packages.'
+    fi
+
+    echo '==> Install Android Studio? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        echo '==> Installing Android Studio...'
+        brew cask install android-studio
+
+        echo 'export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/' >> ~/.bash_profile
+        echo 'export PATH=$PATH:$HOME/Library/Android/sdk/tools/' >> ~/.bash_profile
     else
         echo '==> Skipping development packages.'
     fi
