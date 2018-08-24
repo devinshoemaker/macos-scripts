@@ -8,6 +8,6 @@ if ! command -v brew >/dev/null 2>&1 ; then
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
-        echo '==> Skipping Homebrew.'
+        echo '==> Skipping Homebrew'
     fi
 fi

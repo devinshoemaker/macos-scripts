@@ -5,7 +5,7 @@ read INSTALL_MACOS_UPDATES
 if [ "$INSTALL_MACOS_UPDATES" = 'y' ] || [ "$INSTALL_MACOS_UPDATES" = 'yes' ] || [ "$INSTALL_MACOS_UPDATES" = '' ]; then
     brew cask install tunnelblick
 else
-    echo '==> Skipping TunnelBlick.'
+    echo '==> Skipping TunnelBlick'
 fi
 
 echo '==> Did you set up your SSH key yet? (Y/n)'
@@ -24,7 +24,7 @@ if [ "$SSH_KEY" = 'y' ] || [ "$SSH_KEY" = 'yes' ] || [ "$SSH_KEY" = '' ]; then
         git clone git@github.com:sporting-innovations/fan360-communications.git
         git clone git@github.com:sporting-innovations/fan360-triggers.git
    else
-        echo '==> Skipping FTS source code.'
+        echo '==> Skipping FTS source code'
     fi
 
 fi

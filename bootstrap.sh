@@ -12,7 +12,7 @@ if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
     softwareupdate -l
     softwareupdate -i -a
 else
-    echo '==> Skipping macOS updates.'
+    echo '==> Skipping macOS updates'
 fi
 
 echo '==> Install macOS tweaks? (Y/n)'
@@ -32,7 +32,7 @@ if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
     # Automatically hide and show the Dock
     defaults write com.apple.dock autohide -bool true
 else
-    echo '==> Skipping macOS tweaks.'
+    echo '==> Skipping macOS tweaks'
 fi
 
 echo '==> Checking if Homebrew is installed...'
@@ -44,7 +44,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
         gnu-utils.sh
     else
-        echo '==> Skipping updated GNU utils.'
+        echo '==> Skipping updated GNU utils'
     fi
 
     echo '==> Install Homebrew Caskroom? (Y/n)'
@@ -55,7 +55,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
         brew tap caskroom/cask
         brew tap caskroom/versions
     else
-        echo '==> Skipping Homebrew Cask.'
+        echo '==> Skipping Homebrew Cask'
     fi
 
     echo '==> Install user applications? (Y/n)'
@@ -64,7 +64,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
         echo '==> Installing user applications...'
         brew cask install android-file-transfer eqmac firefox google-chrome slack telegram-desktop transmission vlc
     else
-        echo '==> Skipping user applications.'
+        echo '==> Skipping user applications'
     fi
 
     echo '==> Install development utilities? (Y/n)'
@@ -73,7 +73,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
         echo '==> Installing development utilities...'
         brew cask install docker git gitkraken intellij-idea iterm2 postman visual-studio-code
     else
-        echo '==> Skipping development packages.'
+        echo '==> Skipping development packages'
     fi
 
     echo '==> Install Android Studio? (Y/n)'
@@ -85,7 +85,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
         echo 'export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/' >> ~/.bash_profile
         echo 'export PATH=$PATH:$HOME/Library/Android/sdk/tools/' >> ~/.bash_profile
     else
-        echo '==> Skipping development packages.'
+        echo '==> Skipping development packages'
     fi
 
     echo '==> Install Java 8? (Y/n)'
@@ -94,7 +94,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
         echo '==> Installing Java 8...'
         brew cask install java8
     else
-        echo '==> Skipping Java 8.'
+        echo '==> Skipping Java 8'
     fi
 fi
 
@@ -103,5 +103,5 @@ read USER_PROMPT
 if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
     ./nodejs.sh
 else
-    echo '==> Skipping Node.js.'
+    echo '==> Skipping Node.js'
 fi

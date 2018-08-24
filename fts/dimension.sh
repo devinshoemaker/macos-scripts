@@ -10,20 +10,20 @@ if [[ $? != 0 ]] ; then
         # Install Homebrew
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
-        echo '==> Skipping Homebrew.'
+        echo '==> Skipping Homebrew'
     fi
 else
-    echo '==> Homebrew found, updating packages.'
+    echo '==> Homebrew found, updating packages'
     brew update
 fi
 
-echo '==> Installing required Homebrew packages.'
+echo '==> Installing required Homebrew packages'
 brew install maven nvm tomcat
 
-echo '==> Installing Node.js'
+echo '==> Installing Node.js...'
 nvm install --lts=Boron
 
-echo '==> Installing required NPM packages.'
+echo '==> Installing required NPM packages...'
 npm install -g bower gulp nodemon
 
 mkdir -p ~/code/fts
