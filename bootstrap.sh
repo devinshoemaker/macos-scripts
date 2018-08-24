@@ -39,6 +39,14 @@ echo '==> Checking if Homebrew is installed...'
 . brew.sh
 
 if command -v 'brew' >/dev/null 2>&1 ; then
+    echo '==> Install updated GNU utils? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        gnu-utils.sh
+    else
+        echo '==> Skipping updated GNU utils.'
+    fi
+
     echo '==> Install Homebrew Caskroom? (Y/n)'
     read USER_PROMPT
     if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
