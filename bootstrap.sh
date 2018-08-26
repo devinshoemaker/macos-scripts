@@ -5,6 +5,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# Update the user's cached credentials, authenticating the user if necessary
+sudo -v
+
 echo '==> Install macOS updates? (Y/n)'
 read USER_PROMPT
 if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
