@@ -1,8 +1,17 @@
 #!/bin/sh
 
-# macOS - Install Node.js
+# Install Node.js
 
-. brew.sh
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Update the user's cached credentials, authenticating the user if necessary
+sudo -v
+
+if ! command -v brew >/dev/null 2>&1 ; then
+    echo '==> Homebrew not found. Installing now...'
+    ./brew.sh
+fi
 
 if command -v 'brew' >/dev/null 2>&1 ; then
     # Install Node Version Manager
@@ -17,4 +26,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
 
     # Install latest Node.js with NVM
     nvm install --lts
+else
+    echo '==> Homebrew not found. Aborting...'
+    exit 1
 fi

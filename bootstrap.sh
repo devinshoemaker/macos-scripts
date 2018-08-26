@@ -38,73 +38,18 @@ else
     echo '==> Skipping macOS tweaks'
 fi
 
-echo '==> Checking if Homebrew is installed...'
-. brew.sh
-
-if command -v 'brew' >/dev/null 2>&1 ; then
-    echo '==> Install updated GNU utils? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        gnu-utils.sh
-    else
-        echo '==> Skipping updated GNU utils'
-    fi
-
-    echo '==> Install Homebrew Caskroom? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        echo '==> Tapping Homebrew Caskroom...'
-
-        brew tap caskroom/cask
-        brew tap caskroom/versions
-    else
-        echo '==> Skipping Homebrew Cask'
-    fi
-
-    echo '==> Install user applications? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        echo '==> Installing user applications...'
-        brew cask install android-file-transfer eqmac firefox google-chrome slack telegram-desktop transmission vlc
-    else
-        echo '==> Skipping user applications'
-    fi
-
-    echo '==> Install development utilities? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        echo '==> Installing development utilities...'
-        brew cask install docker git gitkraken intellij-idea iterm2 postman visual-studio-code
-    else
-        echo '==> Skipping development packages'
-    fi
-
-    echo '==> Install Android Studio? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-        echo '==> Installing Android Studio...'
-        brew cask install android-studio
-
-        echo 'export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/' >> ~/.bash_profile
-        echo 'export PATH=$PATH:$HOME/Library/Android/sdk/tools/' >> ~/.bash_profile
-    else
-        echo '==> Skipping development packages'
-    fi
-
-    echo '==> Install Java 8? (Y/n)'
-    read USER_PROMPT
-    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = 'yes' ] || [ "$USER_PROMPT" = '' ]; then
-        echo '==> Installing Java 8...'
-        brew cask install java8
-    else
-        echo '==> Skipping Java 8'
-    fi
+echo '==> Install user applications? (Y/n)'
+read USER_PROMPT
+if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
+    ./user-applications.sh
+else
+    echo '==> Skipping user applications'
 fi
 
-echo '==> Install Node.js? (Y/n)'
+echo '==> Install development utilities? (Y/n)'
 read USER_PROMPT
-if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-    ./nodejs.sh
+if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
+    ./development-utils.sh
 else
-    echo '==> Skipping Node.js'
+    echo '==> Skipping development utilities'
 fi
