@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# macOS - Install Ionic
+# Install Ionic
 
 # Exit immediately if a command exits with a non-zero status
 set -e
@@ -14,7 +14,7 @@ if ! command -v 'npm' >/dev/null 2>&1 ; then
 fi
 
 if command -v 'npm' >/dev/null 2>&1 ; then
-    echo '==> Installing Angular CLI...'
+    echo '==> Installing Ionic CLI...'
     npm install -g ionic cordova
 else
     echo '==> NPM not installed. Aborting...'
