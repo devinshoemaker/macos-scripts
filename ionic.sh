@@ -2,6 +2,9 @@
 
 # macOS - Install Ionic
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
 if ! command -v 'npm' >/dev/null 2>&1 ; then
     echo '==> NPM not installed. Installing Node.js now...'
     ./nodejs.sh
