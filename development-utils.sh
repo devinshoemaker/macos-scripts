@@ -39,7 +39,8 @@ echo '==> Install development applications? (Y/n)'
 read USER_PROMPT
 if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
     echo '==> Installing development applications...'
-    brew cask install docker git gitkraken intellij-idea iterm2 postman visual-studio-code
+    brew install git
+    brew cask install docker gitkraken intellij-idea iterm2 postman visual-studio-code
 else
     echo '==> Skipping development applications'
 fi
