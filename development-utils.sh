@@ -111,11 +111,3 @@ if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
 else
     echo '==> Skipping Android development environment'
 fi
-
-echo '==> Install Android development environment? (Y/n)'
-read USER_PROMPT
-if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-    ./android-development.sh
-else
-    echo '==> Skipping Android development environment'
-fi
