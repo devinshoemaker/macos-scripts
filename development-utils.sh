@@ -8,12 +8,14 @@ set -e
 # Update the user's cached credentials, authenticating the user if necessary
 sudo -v
 
-echo '==> Install Homebrew? (Y/n)'
-read USER_PROMPT
-if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
-    ./brew.sh
-else
-    echo '==> Skipping Homebrew'
+if ! command -v 'brew' >/dev/null 2>&1 ; then
+    echo '==> Install Homebrew? (Y/n)'
+    read USER_PROMPT
+    if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+        ./brew.sh
+    else
+        echo '==> Skipping Homebrew'
+    fi
 fi
 
 echo '==> Tap Homebrew Caskroom? (Y/n)'
