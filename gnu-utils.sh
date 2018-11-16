@@ -22,6 +22,7 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     # Install GNU versions of command line utils
     brew install grep --with-default-names
     brew install gnu-sed --with-default-names
+    brew install moreutils
 else
     echo '==> Homebrew not found. Aborting...'
     exit 1
