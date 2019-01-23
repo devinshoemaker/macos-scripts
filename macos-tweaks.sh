@@ -16,6 +16,9 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Enable dark theme
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
 ###############################################################################
 # Input                                                                       #
 ###############################################################################
