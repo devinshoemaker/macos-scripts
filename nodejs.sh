@@ -20,10 +20,14 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     brew install nvm
 
     # Allow NVM without restarting
-    source $(brew --prefix nvm)/nvm.sh
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
     # Allow NVM after restarting
-    echo 'source $(brew --prefix nvm)/nvm.sh' >> ~/.profile
+    echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bash_profile
+    echo '[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"' >> ~/.bash_profile
+    echo '[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"' >> ~/.bash_profile
 
     echo "==> NVM installed."
 
