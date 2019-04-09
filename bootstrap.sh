@@ -8,36 +8,40 @@ set -e
 # Update the user's cached credentials, authenticating the user if necessary
 sudo -v
 
-echo '==> Install macOS updates? (Y/n)'
+# Store a local variable of the scripts current directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "==> Install macOS updates? (Y/n)"
 read USER_PROMPT
-if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
+if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
     echo "==> Updating macOS..."
     softwareupdate -l
     softwareupdate -i -a
+    echo "==> macOS updated installed."
 else
-    echo '==> Skipping macOS updates'
+    echo "==> Skipping macOS updates."
 fi
 
-echo '==> Install macOS tweaks? (Y/n)'
+echo "==> Install macOS tweaks? (Y/n)"
 read USER_PROMPT
-if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
-    ./macos-tweaks.sh
+if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
+    ${DIR}/macos-tweaks.sh
 else
-    echo '==> Skipping macOS tweaks'
+    echo "==> Skipping macOS tweaks."
 fi
 
-echo '==> Install user applications? (Y/n)'
+echo "==> Install user applications? (Y/n)"
 read USER_PROMPT
-if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
-    ./gui-applications.sh
+if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
+    ${DIR}/gui-applications.sh
 else
-    echo '==> Skipping user applications'
+    echo "==> Skipping user applications."
 fi
 
-echo '==> Install development utilities? (Y/n)'
+echo "==> Install development utilities? (Y/n)"
 read USER_PROMPT
-if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
-    ./development-utils.sh
+if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
+    ${DIR}/development-utils.sh
 else
-    echo '==> Skipping development utilities'
+    echo "==> Skipping development utilities."
 fi

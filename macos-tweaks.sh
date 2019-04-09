@@ -5,7 +5,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-echo '==> Tweaking macOS settings...'
+echo "==> Tweaking macOS settings..."
 
 ###############################################################################
 # General                                                                     #
@@ -97,4 +97,4 @@ for app in "Dock" \
 	killall "${app}" &> /dev/null
 done
 
-echo '==> Done tweaking macOS settings'
+echo "==> Done tweaking macOS settings"

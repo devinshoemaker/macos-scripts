@@ -8,19 +8,24 @@ set -e
 # Update the user's cached credentials, authenticating the user if necessary
 sudo -v
 
-if ! command -v 'brew' >/dev/null 2>&1 ; then
-    echo '==> Homebrew not found. Installing now...'
-    ./brew.sh
+# Store a local variable of the scripts current directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+if ! command -v "brew" > /dev/null 2>&1; then
+    echo "==> Homebrew not found. Installing now..."
+    ${DIV}/brew.sh
 fi
 
-if command -v 'brew' >/dev/null 2>&1 ; then
-    echo '==> Installing user applications...'
+if command -v "brew" > /dev/null 2>&1; then
+    echo "==> Installing user applications..."
+
     brew cask install \
     alfred \
     android-file-transfer \
     caffeine \
     clover-configurator \
-    eqmac firefox \
+    eqmac \
+    firefox \
     google-chrome \
     keka \
     plex-media-server \
@@ -29,7 +34,8 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     telegram-desktop \
     transmission vlc \
 
+    echo "==> User applications installed."
 else
-    echo '==> Homebrew not found. Aborting...'
+    echo "==> Homebrew not found. Aborting..."
     exit 1
 fi

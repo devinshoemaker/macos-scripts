@@ -8,13 +8,16 @@ set -e
 # Update the user's cached credentials, authenticating the user if necessary
 sudo -v
 
-if ! command -v brew >/dev/null 2>&1 ; then
-    echo '==> Homebrew not found. Installing now...'
-    ./brew.sh
+# Store a local variable of the scripts current directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+if ! command -v "brew" > /dev/null 2>&1; then
+    echo "==> Homebrew not found. Installing now..."
+    ${DIV}/brew.sh
 fi
 
-if command -v 'brew' >/dev/null 2>&1 ; then
-    echo '==> Installing updated GNU utilities...'
+if command -v "brew" > /dev/null 2>&1; then
+    echo "==> Installing updated GNU utilities..."
 
     # Install current version of bash
     brew install bash
@@ -23,7 +26,9 @@ if command -v 'brew' >/dev/null 2>&1 ; then
     brew install grep --with-default-names
     brew install gnu-sed --with-default-names
     brew install moreutils
+
+    echo "==> Updated GNU utilities installed."
 else
-    echo '==> Homebrew not found. Aborting...'
+    echo "==> Homebrew not found. Aborting..."
     exit 1
 fi
