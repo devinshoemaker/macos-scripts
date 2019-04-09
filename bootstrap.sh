@@ -29,7 +29,7 @@ fi
 echo '==> Install user applications? (Y/n)'
 read USER_PROMPT
 if [ "$USER_PROMPT" == 'y' ] || [ "$USER_PROMPT" == '' ]; then
-    ./user-applications.sh
+    ./gui-applications.sh
 else
     echo '==> Skipping user applications'
 fi
