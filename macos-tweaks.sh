@@ -34,6 +34,9 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Enter sleep mode after 60 minutes
 sudo systemsetup -setcomputersleep 60
 
+# Disable Notification Center and remove the menu bar icon
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
 ###############################################################################
 # Input                                                                       #
 ###############################################################################
