@@ -15,7 +15,20 @@ fi
 
 if command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Installing user applications...'
-    brew cask install alfred android-file-transfer caffeine clover-configurator eqmac firefox google-chrome keka plex-media-server slack spotify telegram-desktop transmission vlc
+    brew cask install \
+    alfred \
+    android-file-transfer \
+    caffeine \
+    clover-configurator \
+    eqmac firefox \
+    google-chrome \
+    keka \
+    plex-media-server \
+    slack \
+    spotify \
+    telegram-desktop \
+    transmission vlc \
+
 else
     echo '==> Homebrew not found. Aborting...'
     exit 1
