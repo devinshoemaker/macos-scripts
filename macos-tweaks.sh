@@ -29,7 +29,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Enable dark theme
-defaults write NSGlobalDomain AppleInterfaceStyle Dark
+# defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
 ###############################################################################
 # Input                                                                       #
