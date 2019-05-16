@@ -31,6 +31,9 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Enable dark theme
 # defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
+# Enter sleep mode after 60 minutes
+sudo systemsetup -setcomputersleep 60
+
 ###############################################################################
 # Input                                                                       #
 ###############################################################################
