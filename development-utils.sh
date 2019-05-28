@@ -18,6 +18,15 @@ else
     echo '==> Skipping Xcode command line tools'
 fi
 
+echo '==> Install CocoaPods? (Y/n)'
+read USER_PROMPT
+if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+    echo '==> Installing CocoaPods...'
+    sudo gem install cocoapods
+else
+    echo '==> Skipping CocoaPods'
+fi
+
 if ! command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Install Homebrew? (Y/n)'
     read USER_PROMPT
