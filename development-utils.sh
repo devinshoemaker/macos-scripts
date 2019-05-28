@@ -8,6 +8,16 @@ set -e
 # Update the user's cached credentials, authenticating the user if necessary
 sudo -v
 
+echo '==> Install Xcode command line tools? (Y/n)'
+read USER_PROMPT
+if [ "$USER_PROMPT" = 'y' ] || [ "$USER_PROMPT" = '' ]; then
+    echo '==> Installing Xcode command line tools...'
+    xcode-select --install
+    sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+else
+    echo '==> Skipping Xcode command line tools'
+fi
+
 if ! command -v 'brew' >/dev/null 2>&1 ; then
     echo '==> Install Homebrew? (Y/n)'
     read USER_PROMPT
