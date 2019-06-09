@@ -29,7 +29,7 @@ if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
     sudo gem install cocoapods
     echo "==> CocoaPods installed."
 else
-    echo "==> Skipping CocoaPods."
+    echo "==> Skip installing CocoaPods."
 fi
 
 if ! command -v "brew" > /dev/null 2>&1; then
@@ -38,7 +38,7 @@ if ! command -v "brew" > /dev/null 2>&1; then
     if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
         ${DIV}/brew.sh
     else
-        echo "==> Skipping Homebrew."
+        echo "==> Skip installing Homebrew."
     fi
 fi
 
@@ -47,7 +47,7 @@ read USER_PROMPT
 if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
     ${DIV}/gnu-utils.sh
 else
-    echo "==> Skipping updated GNU utilities."
+    echo "==> Skip installing updated GNU utilities."
 fi
 
 echo "==> Install development applications? (Y/n)"
@@ -64,7 +64,7 @@ if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
     postman \
     visual-studio-code
 else
-    echo "==> Skipping development applications."
+    echo "==> Skip installing development applications."
 fi
 
 if ! command -v "node" > /dev/null 2>&1; then
@@ -73,7 +73,7 @@ if ! command -v "node" > /dev/null 2>&1; then
     if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
         ${DIV}/nodejs.sh
     else
-        echo "==> Skipping Node.js."
+        echo "==> Skip installing Node.js."
     fi
 fi
 
@@ -91,7 +91,7 @@ if ! command -v "ionic" > /dev/null 2>&1; then
             echo "==> Skip cloning Ionic projects."
         fi
     else
-        echo "==> Skipping Ionic."
+        echo "==> Skip installing Ionic CLI."
     fi
 fi
 
@@ -109,7 +109,7 @@ if ! command -v "ng" > /dev/null 2>&1; then
         #     echo "==> Skip cloning Angular projects."
         # fi
     else
-        echo "==> Skipping Angular."
+        echo "==> Skip installing Angular CLI."
     fi
 fi
 
@@ -118,7 +118,7 @@ read USER_PROMPT
 if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = 'yes' ]] || [[ "$USER_PROMPT" = '' ]]; then
     ${DIR}/java8.sh
 else
-    echo "==> Skipping Java 8."
+    echo "==> Skip installing Java 8."
 fi
 
 echo "==> Install Android development environment? (Y/n)"
@@ -126,7 +126,7 @@ read USER_PROMPT
 if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
     ${DIV}/android-development.sh
 else
-    echo "==> Skipping Android development environment."
+    echo "==> Skip installing Android development environment."
 fi
 
 echo "==> Development utilities installed."

@@ -19,7 +19,7 @@ if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
     softwareupdate -i -a
     echo "==> macOS updated installed."
 else
-    echo "==> Skipping macOS updates."
+    echo "==> Skip installing macOS updates."
 fi
 
 echo "==> Install macOS tweaks? (Y/n)"
@@ -27,7 +27,7 @@ read USER_PROMPT
 if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
     ${DIR}/macos-tweaks.sh
 else
-    echo "==> Skipping macOS tweaks."
+    echo "==> Skip installing macOS tweaks."
 fi
 
 echo "==> Install user applications? (Y/n)"
@@ -35,7 +35,7 @@ read USER_PROMPT
 if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
     ${DIR}/gui-applications.sh
 else
-    echo "==> Skipping user applications."
+    echo "==> Skip installing user applications."
 fi
 
 echo "==> Install development utilities? (Y/n)"
@@ -43,5 +43,5 @@ read USER_PROMPT
 if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
     ${DIR}/development-utils.sh
 else
-    echo "==> Skipping development utilities."
+    echo "==> Skip installing development utilities."
 fi
