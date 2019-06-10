@@ -18,7 +18,7 @@ if command -v "brew" > /dev/null 2>&1; then
     brew install zsh zsh-completions
     echo "==> Updated ZSH installed."
 
-    echo "export EDITOR=nano" >> ~/.zshenv
+    echo 'export EDITOR=nano' >> ~/.zshenv
     echo "\n" >> ~/.zshenv
 
     echo "==> Installing Oh My Zsh..."

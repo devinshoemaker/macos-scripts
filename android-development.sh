@@ -18,13 +18,13 @@ if command -v "brew" > /dev/null 2>&1; then
 
     brew cask install android-studio
 
-    echo "export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/" >> ~/.bash_profile
-    echo "export PATH=$PATH:$HOME/Library/Android/sdk/tools/" >> ~/.bash_profile
-    echo "\n" >> ~/.bash_profile
+    echo 'export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/' >> ~/.bash_profile
+    echo 'export PATH=$PATH:$HOME/Library/Android/sdk/tools/' >> ~/.bash_profile
+    echo '\n' >> ~/.bash_profile
 
-    echo "export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/" >> ~/.zshenv
-    echo "export PATH=$PATH:$HOME/Library/Android/sdk/tools/" >> ~/.zshenv
-    echo "\n" >> ~/.zshenv
+    echo 'export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/' >> ~/.zshenv
+    echo 'export PATH=$PATH:$HOME/Library/Android/sdk/tools/' >> ~/.zshenv
+    echo '\n' >> ~/.zshenv
     
     echo "==> Android development environment installed."
 else

@@ -29,15 +29,15 @@ if command -v "brew" > /dev/null 2>&1; then
     [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
     # Allow NVM after restarting
-    echo "export NVM_DIR="$HOME/.nvm"" >> ~/.bash_profile
-    echo "[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"" >> ~/.bash_profile
-    echo "[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"" >> ~/.bash_profile
-    echo "\n" >> ~/.bash_profile
+    echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bash_profile
+    echo '[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"' >> ~/.bash_profile
+    echo '[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"' >> ~/.bash_profile
+    echo '\n' >> ~/.bash_profile
 
-    echo "export NVM_DIR="$HOME/.nvm"" >> ~/.zshenv
-    echo "[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"" >> ~/.zshenv
-    echo "[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"" >> ~/.zshenv
-    echo "\n" >> ~/.zshenv
+    echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshenv
+    echo '[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"' >> ~/.zshenv
+    echo '[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"' >> ~/.zshenv
+    echo '\n' >> ~/.zshenv
 
     echo "==> Node Version Manager installed."
 
