@@ -34,10 +34,10 @@ if command -v "brew" > /dev/null 2>&1; then
     echo "[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"" >> ~/.bash_profile
     echo "\n" >> ~/.bash_profile
 
-    echo "export NVM_DIR="$HOME/.nvm"" >> ~/.zlogin
-    echo "[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"" >> ~/.zlogin
-    echo "[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"" >> ~/.zlogin
-    echo "\n" >> ~/.zlogin
+    echo "export NVM_DIR="$HOME/.nvm"" >> ~/.zshenv
+    echo "[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"" >> ~/.zshenv
+    echo "[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"" >> ~/.zshenv
+    echo "\n" >> ~/.zshenv
 
     echo "==> Node Version Manager installed."
 

@@ -18,8 +18,8 @@ if command -v "brew" > /dev/null 2>&1; then
     brew install zsh zsh-completions
     echo "==> Updated ZSH installed."
 
-    echo "export EDITOR=nano" >> ~/.zlogin
-    echo "\n" >> ~/.zlogin
+    echo "export EDITOR=nano" >> ~/.zshenv
+    echo "\n" >> ~/.zshenv
 
     echo "==> Installing Oh My Zsh..."
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
