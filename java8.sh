@@ -15,7 +15,7 @@ fi
 
 if command -v "brew" > /dev/null 2>&1; then
     echo "==> Tapping OpenJDK..."
-    brew tap adoptopenjdk/openjdk
+    brew tap homebrew/cask-versions
     echo "==> OpenJDK tapped."
 
     echo "==> Installing OpenJDK 8..."
