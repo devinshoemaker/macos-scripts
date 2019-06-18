@@ -45,3 +45,5 @@ if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
 else
     echo "==> Skip installing development utilities."
 fi
+
+echo "==> Bootstrap complete."
