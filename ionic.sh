@@ -13,7 +13,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if ! command -v "npm" > /dev/null 2>&1; then
     echo "==> NPM not installed. Installing Node.js now..."
-    ${DIV}/nodejs.sh
+    ${DIR}/nodejs.sh
 fi
 
 if command -v "npm" > /dev/null 2>&1; then

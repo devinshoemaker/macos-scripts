@@ -36,7 +36,7 @@ if ! command -v "brew" > /dev/null 2>&1; then
     echo "==> Install Homebrew? (Y/n)"
     read USER_PROMPT
     if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        ${DIV}/brew.sh
+        ${DIR}/brew.sh
     else
         echo "==> Skip installing Homebrew."
     fi
@@ -45,7 +45,7 @@ fi
 echo "==> Install updated GNU utilities? (Y/n)"
 read USER_PROMPT
 if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-    ${DIV}/gnu-utils.sh
+    ${DIR}/gnu-utils.sh
 else
     echo "==> Skip installing updated GNU utilities."
 fi
@@ -71,7 +71,7 @@ if ! command -v "node" > /dev/null 2>&1; then
     echo "==> Install Node.js? (Y/n)"
     read USER_PROMPT
     if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        ${DIV}/nodejs.sh
+        ${DIR}/nodejs.sh
     else
         echo "==> Skip installing Node.js."
     fi
@@ -81,12 +81,12 @@ if ! command -v "ionic" > /dev/null 2>&1; then
     echo "==> Install Ionic? (Y/n)"
     read USER_PROMPT
     if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        ${DIV}/ionic.sh
+        ${DIR}/ionic.sh
 
         echo "==> Clone Ionic projects? (Y/n)"
         read USER_PROMPT
         if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-            ${DIV}/ionic-projects.sh
+            ${DIR}/ionic-projects.sh
         else
             echo "==> Skip cloning Ionic projects."
         fi
@@ -99,12 +99,12 @@ if ! command -v "ng" > /dev/null 2>&1; then
     echo "==> Install Angular? (Y/n)"
     read USER_PROMPT
     if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        ${DIV}/angular.sh
+        ${DIR}/angular.sh
 
         # echo "==> Clone Angular projects? (Y/n)"
         # read USER_PROMPT
         # if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        #     ${DIV}/angular-projects.sh
+        #     ${DIR}/angular-projects.sh
         # else
         #     echo "==> Skip cloning Angular projects."
         # fi
@@ -124,7 +124,7 @@ fi
 echo "==> Install Android development environment? (Y/n)"
 read USER_PROMPT
 if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-    ${DIV}/android-development.sh
+    ${DIR}/android-development.sh
 else
     echo "==> Skip installing Android development environment."
 fi

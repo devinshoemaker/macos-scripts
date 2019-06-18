@@ -14,7 +14,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if ! command -v "brew" > /dev/null 2>&1; then
     echo "==> Homebrew not found. Installing now..."
-    ${DIV}/brew.sh
+    ${DIR}/brew.sh
 fi
 
 if command -v "brew" > /dev/null 2>&1; then
