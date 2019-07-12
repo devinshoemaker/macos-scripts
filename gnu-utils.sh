@@ -23,8 +23,8 @@ if command -v "brew" > /dev/null 2>&1; then
     brew install bash
 
     # Install GNU versions of command line utils
-    brew install grep --with-default-names
-    brew install gnu-sed --with-default-names
+    brew install grep
+    brew install gnu-sed
     brew install moreutils
 
     echo "==> Updated GNU utilities installed."
