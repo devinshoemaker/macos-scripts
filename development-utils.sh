@@ -59,6 +59,7 @@ if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
     brew cask install \
     docker \
     gitkraken \
+    hyper \
     intellij-idea \
     iterm2 \
     postman \
