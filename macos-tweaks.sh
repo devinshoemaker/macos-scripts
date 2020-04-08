@@ -38,6 +38,12 @@ sudo systemsetup -setcomputersleep 60
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 ###############################################################################
+# General                                                                     #
+###############################################################################
+# Allow apps downloaded from "anywhere"
+sudo spctl --master-disable
+
+###############################################################################
 # Input                                                                       #
 ###############################################################################
 # Disable natural scrolling
