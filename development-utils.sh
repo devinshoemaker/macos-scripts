@@ -78,42 +78,6 @@ if ! command -v "node" > /dev/null 2>&1; then
     fi
 fi
 
-if ! command -v "ionic" > /dev/null 2>&1; then
-    echo "==> Install Ionic? (Y/n)"
-    read USER_PROMPT
-    if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        ${DIR}/ionic.sh
-
-        echo "==> Clone Ionic projects? (Y/n)"
-        read USER_PROMPT
-        if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-            ${DIR}/ionic-projects.sh
-        else
-            echo "==> Skip cloning Ionic projects."
-        fi
-    else
-        echo "==> Skip installing Ionic CLI."
-    fi
-fi
-
-if ! command -v "ng" > /dev/null 2>&1; then
-    echo "==> Install Angular? (Y/n)"
-    read USER_PROMPT
-    if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        ${DIR}/angular.sh
-
-        # echo "==> Clone Angular projects? (Y/n)"
-        # read USER_PROMPT
-        # if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
-        #     ${DIR}/angular-projects.sh
-        # else
-        #     echo "==> Skip cloning Angular projects."
-        # fi
-    else
-        echo "==> Skip installing Angular CLI."
-    fi
-fi
-
 echo "==> Install Java 8? (Y/n)"
 read USER_PROMPT
 if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = 'yes' ]] || [[ "$USER_PROMPT" = '' ]]; then
