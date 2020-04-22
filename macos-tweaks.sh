@@ -83,6 +83,12 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.dock autohide -bool true
 
 ###############################################################################
+# Dock                                                                        #
+###############################################################################
+# Show seconds in menu bar
+defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
+
+###############################################################################
 # Messages                                                                    #
 ###############################################################################
 # Disable automatic emoji substitution (i.e. use plain text smileys)
@@ -99,7 +105,8 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 for app in "Dock" \
 	"Finder" \
-	"Messages"; do
+	"Messages" \
+	"SystemUIServer"; do
 	killall "${app}" &> /dev/null
 done
 
