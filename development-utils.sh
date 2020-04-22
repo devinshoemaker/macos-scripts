@@ -78,14 +78,6 @@ if ! command -v "node" > /dev/null 2>&1; then
     fi
 fi
 
-echo "==> Install Java 8? (Y/n)"
-read USER_PROMPT
-if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = 'yes' ]] || [[ "$USER_PROMPT" = '' ]]; then
-    ${DIR}/java8.sh
-else
-    echo "==> Skip installing Java 8."
-fi
-
 echo "==> Install Android development environment? (Y/n)"
 read USER_PROMPT
 if [[ "$USER_PROMPT" = 'y' ]] || [[ "$USER_PROMPT" = '' ]]; then
