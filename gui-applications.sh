@@ -22,11 +22,7 @@ if command -v "brew" > /dev/null 2>&1; then
     brew cask install \
     alfred \
     android-file-transfer \
-    caffeine \
-    clover-configurator \
-    eqmac \
     firefox \
-    google-chrome \
     keka \
     plex-media-server \
     pocket-casts \
