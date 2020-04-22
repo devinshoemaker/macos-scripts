@@ -11,17 +11,6 @@ sudo -v
 # Store a local variable of the scripts current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "==> Install macOS updates? (Y/n)"
-read USER_PROMPT
-if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
-    echo "==> Updating macOS..."
-    softwareupdate -l
-    softwareupdate -i -a
-    echo "==> macOS updated installed."
-else
-    echo "==> Skip installing macOS updates."
-fi
-
 echo "==> Install macOS tweaks? (Y/n)"
 read USER_PROMPT
 if [[ "$USER_PROMPT" == 'y' ]] || [[ "$USER_PROMPT" == '' ]]; then
