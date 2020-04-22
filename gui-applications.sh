@@ -33,7 +33,8 @@ if command -v "brew" > /dev/null 2>&1; then
     slack \
     spotify \
     telegram-desktop \
-    transmission vlc \
+    transmission \
+    vlc \
 
     echo "==> User applications installed."
 else
