@@ -29,6 +29,7 @@ if command -v "brew" > /dev/null 2>&1; then
     google-chrome \
     keka \
     plex-media-server \
+    pocket-casts \
     slack \
     spotify \
     telegram-desktop \
