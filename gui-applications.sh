@@ -23,6 +23,7 @@ if command -v "brew" > /dev/null 2>&1; then
     alfred \
     android-file-transfer \
     firefox \
+    hyper \
     keka \
     plex-media-server \
     pocket-casts \
