@@ -22,5 +22,5 @@ if command -v "brew" > /dev/null 2>&1; then
     echo "\n" >> ~/.zshenv
 
     echo "==> Installing Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
